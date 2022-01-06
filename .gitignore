@@ -1,0 +1,9 @@
+.env
+test
+train
+test.lst
+train.lst
+.ipynb_checkpoints
+rule-output
+cifar-100-python
+captured_data
