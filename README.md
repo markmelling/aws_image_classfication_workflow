@@ -4,11 +4,9 @@ This project uses AWS services to train, deploy and monitor a model for classify
 
 The CIFAR dataset is used for training and testing images. Only images of vehicles are selected and uploaded to an S3 bucket.
 
-<img src="img/bike_s_002118.png" alt="Example image" width="500"/>
+<img src="img/bike_s_002118.png" alt="Example image" width="320"/>
 
 A SageMaker Estimator is used, with an "image-classification" image to train the model.
-
-TODO show results of training and results
 
 The trained model is deployed with a Model Monitor so that the model's performance can be monitored.
 
@@ -22,7 +20,7 @@ AWS lambda functions (in the lambdas/) are used to classify images:
 
 These three lambda functions are integrated using a Step Function so that images uploaded to S3 are classified.
 
-<img src="img/working_step_function.png" alt="Step Function" width="500"/>
+<img src="img/working_step_function.png" alt="Step Function" width="600"/>
 
 The classification result of any images that could not be classied with any degree of confidence are stored in the image_classification_fail folder and published to an SNS topic.
 
