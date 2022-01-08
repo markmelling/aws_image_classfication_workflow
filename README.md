@@ -20,7 +20,11 @@ AWS lambda functions (in the lambdas/) are used to classify images:
 
 These three lambda functions are integrated using a Step Function so that images uploaded to S3 are classified.
 
-<img src="img/working_step_function.png" alt="Step Function" width="600"/>
+<img src="img/working_step_function.png" alt="Working Step Function" width="600"/>
+
+If the confidence level for a classified image falls below a confidence threshold then an exception is raised which is caught by the step function
+
+<img src="img/failed_threshold_step_function.png" alt="Failed Step Function" width="600"/>
 
 The classification result of any images that could not be classied with any degree of confidence are stored in the image_classification_fail folder and published to an SNS topic.
 
